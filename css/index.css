@@ -1,0 +1,311 @@
+
+
+body {
+    color: darkorange;
+    /* background-color: #191036; */
+    /* background-color: #0f0b2d; */
+    background-color: rgb(5, 4, 16);
+    background-color: black;
+    font-family: 'Tillana', cursive;;
+}
+
+
+
+
+/* --------------------------------------------------cabecalho--------------------------------------------- */
+
+.cabecalho {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: linear-gradient(45deg, black, black);
+}
+
+.cabecalho::before {
+    content:"";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: url(../img/background-lua-sangrenta.webp);
+    background-size: cover;
+    position: absolute;
+    opacity: 0.3;
+}
+
+.caixa-cabecalho {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.titulo-cabecalho {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 1em;
+    color: darkblue;
+}
+
+.lista-fotos-cabecalho {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    opacity: 0.3;
+}
+
+.imagem-cabecalho {
+    width: 100%;
+    height: 300px;
+}
+
+
+/* ------------------------------------------------------------------------ Main ----------------------------------------------------------------------------------------------- */
+
+
+.container__principal {
+    height: 100vh;
+}
+
+.container__conteudo {
+    display: grid;
+    grid-template-columns: 66% repeat(1, 1fr);
+    height: 100vh;
+}
+
+.container__conteudo-secundario {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr) 66%;
+    height: 100vh;
+}
+
+.container__conteudo-terciario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 100vh;
+}
+
+
+.imagem-padrao {
+    height: 100vh;
+    position: relative;
+}
+
+.container__box {
+    color: darkorange;
+    text-align: center;
+    line-height: 1.3em;
+}
+
+.titulo__principal{
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 0.6em;
+    position: relative;
+}
+
+.paragrafo-principal {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    position: relative;
+}
+
+.container__side-principal {
+    display: flex;
+    position: relative;
+}
+
+
+.container__side-secundario {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-color: black;
+    
+
+}
+
+/* -----akaza----- */
+
+.container__akaza{
+    background-image:
+        linear-gradient(45deg, black,cyan);
+}
+
+.side__primal-akaza{
+    background-image: 
+        url(../img/akaza/fundo/kanji-w-removebg-preview.png),
+        url(../img/akaza/fundo/territorio-ice-3.png);
+    background-size: 10%;
+    background-repeat: space;
+    background-position: center;
+}
+
+.side__secundario-akaza{
+    display: flex;
+    background-image:
+        url(../img/akaza/Akaza\ Power\ Poster\ by\ Marsdk\ Art.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* -----Douma----- */
+
+
+.side__primal-douma {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    background:
+        linear-gradient(to top, rgb(68, 68, 246), blue, darkblue, black);
+    background-size: 400% 400%;
+    animation: gradient 10s ease-in infinite;
+
+}
+
+.side__primal-douma::before {
+    content:"";
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    background-color: black;
+    background-image: url(../img/douma/fundo/flor-azul-cut-4.png); 
+    background-position: bottom;
+    background-size: 100% 60%;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+.side__primal-douma::after {
+    content:"";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-image:
+        url(../img/douma/fundo/kkkkkk-cut.png); 
+    background-position: initial;
+    background-size: 150% 150%;
+    background-repeat: no-repeat;
+
+    opacity: 0.5;
+    animation: neve 10s linear infinite;
+}
+
+
+.side-secundario-douma {
+    background-image: 
+        url(../img/douma/fundo/gelido.jpg);
+    display: flex;
+    align-items: top;
+}
+
+.side-secundario-douma::before {
+    content:"";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-image: s;
+        /* linear-gradient(to left, black , transparent 40%); */
+    opacity: 0.6;
+}
+
+.img-side-secundario {
+    width: 250px;
+}
+
+
+/* ----------Kokushibou---------- */
+
+.container__kokushibou {
+    background-color: rgb(4, 4, 14);
+}
+
+.first-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(to bottom right, #550000, transparent 60%);
+    
+}
+
+
+
+.second-side {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgb(4, 4, 14);
+}
+
+
+.img__kokushibou-oni {
+    width: 50%;
+    display: inline;
+    position: absolute;
+    bottom: 1em;
+    
+}
+
+.img__kokushibou-human {
+    width: 50%;
+    display: inline;
+    position: absolute;
+    bottom: 4em;
+    
+}
+
+.chao {
+    position: absolute;
+    bottom: 0;
+    display: inline;
+    width: 100%;
+    height: 30%;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes neve {
+    0% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 50% 0%;
+    }
+    50% {
+        background-position: 50% 100%;
+    }
+    100% {
+        background-position: 50% 0%;
+    }
+}
