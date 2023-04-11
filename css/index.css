@@ -1,12 +1,35 @@
 
-
+* {
+    box-sizing: border-box;
+}
 body {
     color: darkorange;
     /* background-color: #191036; */
     /* background-color: #0f0b2d; */
     background-color: rgb(5, 4, 16);
     background-color: black;
-    font-family: 'Tillana', cursive;;
+    font-family: 'Tillana', cursive;
+    box-sizing: border-box;
+}
+
+.color-red {
+    color: red;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.color-blue {
+    color: blue;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.color-orange {
+    color: orange;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.color-darkorange {
+    color: rgb(225, 124, 0);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 
@@ -82,10 +105,10 @@ body {
 
 .container__conteudo-terciario {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     height: 100vh;
+    
 }
-
 
 .imagem-padrao {
     height: 100vh;
@@ -96,6 +119,7 @@ body {
     color: darkorange;
     text-align: center;
     line-height: 1.3em;
+    width: 80%;
 }
 
 .titulo__principal{
@@ -110,10 +134,14 @@ body {
     font-weight: 400;
     margin-bottom: 0.5em;
     position: relative;
+    /* background-color: rgb(0, 0, 0, 0.2); */
+    border-radius: 10px;
 }
 
 .container__side-principal {
     display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
 }
 
@@ -121,6 +149,7 @@ body {
 .container__side-secundario {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 100%;
     background-color: black;
     
@@ -135,6 +164,9 @@ body {
 }
 
 .side__primal-akaza{
+    display: flex;
+    align-items: center;
+    justify-content: start;
     background-image: 
         url(../img/akaza/fundo/kanji-w-removebg-preview.png),
         url(../img/akaza/fundo/territorio-ice-3.png);
@@ -227,11 +259,90 @@ body {
 }
 
 
+
+
+
 /* ----------Kokushibou---------- */
+
+
+
+
+
+.dd1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100vh;
+    animation: ann 1s linear 1;
+    
+}
+
+.textBox-kokushibou  {
+    width: 80%;
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-65%);
+    opacity: 1;
+    
+}
+
+.textBox-kokushibou {
+    animation: colorr 1.2s linear 1;
+}
+
+@keyframes colorr {
+    0%{
+        opacity: 0;
+    }
+    85% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacity {
+    0%{
+        opacity: 0.45;
+    }
+
+    50%{
+        opacity: 0.95;
+    }
+
+    100% {
+        opacity: 0.45;
+    }
+}
+
+.paragrafo_kokushibou{
+    line-height: 1.25em;
+    margin-top: 1.2em;
+    background-color: rgba(0, 0, 0, 0.124);
+}
 
 .container__kokushibou {
     background-color: rgb(4, 4, 14);
+    position: relative;
+    overflow: hidden;
+    transition: all 3s;
 }
+
+.container__kokushibou::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: 
+        url(../img/kokushibou/luas/nevoa-cut.png);
+    opacity: 0.5;
+    z-index: 1;
+    animation: nevoa 25s linear infinite;
+}
+
 
 .first-side {
     display: flex;
@@ -239,11 +350,130 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-image: linear-gradient(to bottom right, #550000, transparent 60%);
+    background-image: linear-gradient(to bottom right, #550000, transparent 50%);
+    transition: all 3s;
+}
+
+.first-side::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-image:
+        url(../img/kokushibou/luas/lua_sangrenta-cut-inverse.png);
+    background-repeat: no-repeat;
+
+
+        /* primal moon: */
+    background-position: 50% 28%; 
+    background-size: 45%;
+
+   
+
+}
+
+.dd1 > .first-side::before {
+    background-position: 50% 15%;
+    background-size: 46%;
+}
+
+
+
+ /* ---container-central--- */
+
+
+.conteudo-mid{
+    display: none;
+    transition: all 2s;
+}
+
+
+.mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1000;
+    background-color: black;
+
+    box-shadow:
+        -5px 0 15px red,
+        5px 0 15px darkblue;
+}
+
+
+.mid::before,
+.mid::after {
+    content: "";
+    position: absolute;
+}
+
+.mid::before {
+    width: 180px;
+    height: 140%;
+    background-image: linear-gradient(#770000, rgb(9, 30, 80));
+    background-color: black;
+    animation: border-animation 4s linear infinite;
+}
+
+.mid::after {
+    inset: 10px;
+    background-color: black;
+    
+    background-image: 
+        
+        linear-gradient(to right, #55000094, transparent 6%),
+        linear-gradient(to top, #55000094, transparent 6%),
+        linear-gradient(to bottom, #55000094, transparent 6%),
+        linear-gradient(to left, #55000094, transparent 6%),
+        url(../img/kokushibou/bg.jpg);
     
 }
 
 
+
+
+.caixa-paragrafo {
+    padding: 0.1em;
+    background-color: rgb(0, 0, 0, 0.1);
+    color: rgb(255, 159, 43);
+    box-shadow: 
+        2px 2px 10px rgb(0, 0, 0, 0.1),
+        -2px -2px 10px rgb(0, 0, 0, 0.1);
+}
+
+.img-koku-shadow {
+    position: absolute;
+    bottom: 0em;
+    left: 50%;
+    transform: translateX(-60%);
+    display: inline;
+    height: 45%;
+    z-index: 1;
+}
+
+.img-olhos-koku {
+    position: absolute;
+    top: 6em;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline;
+    height: 42%;
+    z-index: 1;
+    opacity: 0.45;
+    animation: opacity 4s linear infinite;
+    
+}
+
+
+
+
+                    /* ---container-direito---- */
 
 .second-side {
     display: flex;
@@ -251,8 +481,39 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-color: rgb(4, 4, 14);
+    transition: all 3s;
+    background-image:  linear-gradient(to bottom left, rgb(9, 33, 67), transparent 52%);
 }
+
+.second-side::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-image:
+        url(../img/kokushibou/luas/lua-cut.png);
+    background-repeat: no-repeat;
+    
+        /* samira */
+    background-position: 50% 30%;
+    background-size: 45%;
+
+
+    
+}
+
+.dd1 > .second-side::before {
+    background-position: 50% 16%;
+    background-size: 46%;
+}
+
+
+
+
+
 
 
 .img__kokushibou-oni {
@@ -260,7 +521,6 @@ body {
     display: inline;
     position: absolute;
     bottom: 1em;
-    
 }
 
 .img__kokushibou-human {
@@ -268,25 +528,27 @@ body {
     display: inline;
     position: absolute;
     bottom: 4em;
-    
 }
 
-.chao {
+.chao  {
     position: absolute;
     bottom: 0;
     display: inline;
     width: 100%;
-    height: 30%;
+    height: 25%;
+    z-index: 10000;
+    cursor: pointer;
+    opacity: 1 !important; 
 }
 
-
-
-
-
-
-
-
-
+@keyframes ann {
+    0% {
+        grid-template-columns: 1fr 0fr 1fr;
+    }
+    100%{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
 
 @keyframes neve {
     0% {
@@ -298,6 +560,7 @@ body {
     }
 }
 
+
 @keyframes gradient {
     0% {
         background-position: 50% 0%;
@@ -307,5 +570,25 @@ body {
     }
     100% {
         background-position: 50% 0%;
+    }
+}
+
+@keyframes nevoa {
+    to {
+        background-position: 100% 0%;
+    }
+
+    from {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes border-animation {
+    to {
+        transform: rotate(0deg)
+    }
+
+    from {
+        transform: rotate(360deg);
     }
 }
