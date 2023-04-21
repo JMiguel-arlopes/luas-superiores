@@ -20,6 +20,12 @@ body {
 .color-blue {
     color: blue;
     background-color: rgba(0, 0, 0, 0.2);
+    text-shadow: 5px 1px darkblue;
+}
+
+.color-darkblue {
+    color: blue;
+    text-shadow: 1px 1px black;
 }
 
 .color-orange {
@@ -35,14 +41,23 @@ body {
 
 
 
+
 /* --------------------------------------------------cabecalho--------------------------------------------- */
 
 .cabecalho {
-    height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-image: linear-gradient(45deg, black, black);
+    flex-direction: row;
+    justify-content: center;
+    align-items: top;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+   
+    background-color:  black;
 }
 
 .cabecalho::before {
@@ -51,25 +66,68 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
+
+    position: absolute;
     background-image: url(../img/background-lua-sangrenta.webp);
     background-size: cover;
-    position: absolute;
     opacity: 0.3;
 }
 
 .caixa-cabecalho {
-    display: flex;
-    flex-direction: column;
+    margin: 2em 0;
+    width: 75%;
     text-align: center;
     position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+
 }
+
+
+
 
 .titulo-cabecalho {
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 1em;
-    color: darkblue;
+    color: rgba(0, 0, 0, 0.015);
+    position: relative;
+    width: 172.58px;
 }
+
+
+.titulo-cabecalho::before {
+    content: attr(data-text);
+    position: absolute;
+    color: red;
+    height: 36px;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: color-transition 3s linear 1;
+    filter: drop-shadow(0 0 20px darkblue) drop-shadow(0 0 50px darkblue);
+    cursor: pointer;
+}
+
+@keyframes color-transition {
+    0% {
+        width: 0;
+        border-right: 2px darkred solid;
+    }
+
+    99% {
+        border-right: 2px darkred solid;
+    }
+
+    100% {
+        width: 100%;
+        border-right: none;
+    }
+}
+
+
+
 
 .lista-fotos-cabecalho {
     display: flex;
@@ -81,6 +139,87 @@ body {
 .imagem-cabecalho {
     width: 100%;
     height: 300px;
+}
+
+.paragrafo-cabecalho {
+    display: none;
+}
+
+.textArray {
+    display: block;
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 1em;
+    position: relative;
+    border-radius: 10px;
+    line-height: 1.35em;
+    text-shadow: 1px 1px red;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.textArray::after {
+    content: '|';
+    margin-left: 5px;
+    color: orange;
+    opacity: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    animation: opacityTecla 2s infinite;
+}
+
+@keyframes opacityTecla {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.muzan-img {
+    position: absolute;
+    bottom: 0;
+    opacity: 0.1;
+    width: 50%;
+    display: inline;
+}
+
+.prosseguir {
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 1em;
+    position: relative;
+    color: red;
+    transition: 250ms;
+    cursor: pointer;
+    z-index: 10;
+    text-shadow: 1px 1px black;
+
+}
+
+.prosseguir::after {
+    content: '';
+}
+
+.prosseguir:hover {
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: 1em;
+    position: relative;
+    color: darkred;
+    text-decoration: underline;
+    text-shadow: 1px 1px red;
+}
+
+.hide-cabecalho {
+    animation: kj 1s linear 1;
+    display: none;
+}
+@keyframes kj {
+    0% {
+        display: block;
+    }
 }
 
 
@@ -134,7 +273,6 @@ body {
     font-weight: 400;
     margin-bottom: 0.5em;
     position: relative;
-    /* background-color: rgb(0, 0, 0, 0.2); */
     border-radius: 10px;
 }
 
@@ -152,15 +290,26 @@ body {
     justify-content: center;
     height: 100%;
     background-color: black;
-    
-
 }
+
+
+
+
+
+
+
+
 
 /* -----akaza----- */
 
 .container__akaza{
     background-image:
         linear-gradient(45deg, black,cyan);
+}
+
+.container__akaza-click{
+    background-image:
+        linear-gradient(45deg, black, black 45%);
 }
 
 .side__primal-akaza{
@@ -175,14 +324,79 @@ body {
     background-position: center;
 }
 
+
+.titulo-akaza {
+    color: rgb(255, 0, 43);
+    text-shadow: 1.5px 1.5px rgb(0, 206, 206);
+    text-decoration: underline;
+}
+
+
+.paragrafo-akaza {
+    font-weight: 600;
+    color: #010101;
+    text-shadow: 1px 1px rgb(255, 0, 43);
+    line-height: 1.3em;
+    background-image: linear-gradient(to right,transparent, rgba(0, 0, 0, 0.342) 5%, rgba(0, 0, 0, 0.332) 95%, transparent);
+}
+
+
+
+
+
+
+.click-akaza {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+
+    background-image: 
+        url(../img/akaza/fundo/domo-red-cut.png);
+    background-size: 10%;
+    background-repeat: space;
+    background-position: center;
+    overflow: hidden;
+    animation: opacityMain .5s ease-in 1;
+}
+
+
+
+.click-akaza > .imagem-primaria-akaza {
+    display: none;
+}
+
+.imagem-primaria-akaza {
+    cursor: pointer;
+}
+
+.akazaImage {
+    height: 95%;
+    position: relative;
+    opacity: 1;
+    cursor: pointer;
+}
+
+
 .side__secundario-akaza{
     display: flex;
     background-image:
+        linear-gradient(to right,transparent, rgba(0, 0, 0, 0.17) 5%, rgba(0, 0, 0, 0.153) 95%, transparent),
         url(../img/akaza/Akaza\ Power\ Poster\ by\ Marsdk\ Art.png);
+        
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
+
+
+
+
+
+
+
+
+
 
 
 /* -----Douma----- */
@@ -192,46 +406,97 @@ body {
     display: flex;
     justify-content: center;
     position: relative;
+    overflow: hidden;
 
-    background:
-        linear-gradient(to top, rgb(68, 68, 246), blue, darkblue, black);
-    background-size: 400% 400%;
-    animation: gradient 10s ease-in infinite;
-
+    background: 
+        linear-gradient(to top, rgb(0,0,42,0.7), rgb(0,0,22,0.6),  black);
+    background-size: 4500% 4500%;
+    animation: gradient 8s ease-in-out infinite;
+    
 }
 
-.side__primal-douma::before {
+
+.side__primal-douma::before,
+.side__primal-douma::after {
     content:"";
     position: absolute;
     top:0;
     right: 0;
     bottom: 0;
     left:0;
-    background-color: black;
-    background-image: url(../img/douma/fundo/flor-azul-cut-4.png); 
-    background-position: bottom;
-    background-size: 100% 60%;
+}
+
+.side__primal-douma::before {
+
+    
+    background-image: url(../img/douma/fundo/—Pngtree—winter\ white\ christmas\ snowflakes\ falling_8533062.png);
+
+    background-position: top;
+    background-size: 170% 170%;
     background-repeat: no-repeat;
-    opacity: 0.9;
+    opacity: 0.25;
+
+    filter: blur(5px);
+    animation: neve 16s linear infinite;
 }
 
 .side__primal-douma::after {
-    content:"";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
+    
     background-image:
         url(../img/douma/fundo/kkkkkk-cut.png); 
     background-position: initial;
-    background-size: 150% 150%;
+    background-size: 140% 140%;
     background-repeat: no-repeat;
 
-    opacity: 0.5;
-    animation: neve 10s linear infinite;
+    filter: blur(2px);
+    opacity: 1;
+    animation: neve 12s linear infinite;
+    
 }
+
+.titulo-douma {
+    color:darkblue;
+    text-shadow: 2px 2px black;
+    letter-spacing: 1.5px;
+    font-weight: 900;
+}
+
+.paragrafo-douma {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    background-image: 
+    linear-gradient(to right,transparent, rgba(0, 0, 101, 0.12) 5%, rgba(0, 0, 101, 0.12) 95%, transparent);
+    text-shadow: 0.3px 0.3px darkblue;
+    box-shadow: 0.2px 0.2px 15px rgb(0, 0, 0, 0.1);
+}
+
+.flores-azuis {
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+}
+
+.sakura-douma {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline;
+    width: 45%;
+    z-index: 10;
+}
+
+.sakura {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline;
+    width: 45%;
+    z-index: 10;
+}
+
+
 
 
 .side-secundario-douma {
@@ -241,22 +506,18 @@ body {
     align-items: top;
 }
 
-.side-secundario-douma::before {
-    content:"";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    background-image: s;
-        /* linear-gradient(to left, black , transparent 40%); */
-    opacity: 0.6;
-}
-
 .img-side-secundario {
     width: 250px;
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -273,7 +534,6 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     height: 100vh;
     animation: ann 1s linear 1;
-    
 }
 
 .textBox-kokushibou  {
@@ -288,6 +548,12 @@ body {
 
 .textBox-kokushibou {
     animation: colorr 1.2s linear 1;
+}
+
+.kokushibouimg {
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
 }
 
 @keyframes colorr {
@@ -320,6 +586,7 @@ body {
     line-height: 1.25em;
     margin-top: 1.2em;
     background-color: rgba(0, 0, 0, 0.124);
+    text-shadow: 1px 1px darkred;
 }
 
 .container__kokushibou {
@@ -327,6 +594,7 @@ body {
     position: relative;
     overflow: hidden;
     transition: all 3s;
+    font-size: 16px;
 }
 
 .container__kokushibou::after {
@@ -336,6 +604,7 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
+
     background-image: 
         url(../img/kokushibou/luas/nevoa-cut.png);
     opacity: 0.5;
@@ -398,7 +667,7 @@ body {
     overflow: hidden;
     box-sizing: border-box;
     position: relative;
-    z-index: 1000;
+    z-index: 100;
     background-color: black;
 
     box-shadow:
@@ -442,9 +711,16 @@ body {
     padding: 0.1em;
     background-color: rgb(0, 0, 0, 0.1);
     color: rgb(255, 159, 43);
+    font-size: 16px;
     box-shadow: 
         2px 2px 10px rgb(0, 0, 0, 0.1),
         -2px -2px 10px rgb(0, 0, 0, 0.1);
+}
+
+.miniTexto-kokushibou {
+    font-size: 10px;
+    text-align: initial;
+    color: rgba(255, 166, 0, 0.715);
 }
 
 .img-koku-shadow {
@@ -470,9 +746,6 @@ body {
     
 }
 
-
-
-
                     /* ---container-direito---- */
 
 .second-side {
@@ -497,12 +770,8 @@ body {
         url(../img/kokushibou/luas/lua-cut.png);
     background-repeat: no-repeat;
     
-        /* samira */
     background-position: 50% 30%;
-    background-size: 45%;
-
-
-    
+    background-size: 45%; 
 }
 
 .dd1 > .second-side::before {
@@ -521,6 +790,7 @@ body {
     display: inline;
     position: absolute;
     bottom: 1em;
+    z-index: 10;
 }
 
 .img__kokushibou-human {
@@ -528,6 +798,7 @@ body {
     display: inline;
     position: absolute;
     bottom: 4em;
+    z-index: 10;
 }
 
 .chao  {
@@ -536,9 +807,9 @@ body {
     display: inline;
     width: 100%;
     height: 25%;
-    z-index: 10000;
+    z-index: 110;
     cursor: pointer;
-    opacity: 1 !important; 
+    opacity: 1; 
 }
 
 @keyframes ann {
@@ -591,4 +862,44 @@ body {
     from {
         transform: rotate(360deg);
     }
+}
+
+@keyframes opacityMain {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.arco-iris {
+    background-image: linear-gradient(to right, red, orange, green, blue, indigo, #91489d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: none ;
+    position: relative;
+    z-index: 1;
+}
+
+.arco-iris::before {
+    content: "";
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: rgb(0,0,0,0.08);
+}
+
+
+.anime {
+    opacity: 0;
+    transition: 1.2s;
+}
+
+.anime-start {
+    opacity: 1;
 }
