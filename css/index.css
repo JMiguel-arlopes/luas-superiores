@@ -2,11 +2,9 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     color: darkorange;
-    /* background-color: #191036; */
-    /* background-color: #0f0b2d; */
-    background-color: rgb(5, 4, 16);
     background-color: black;
     font-family: 'Tillana', cursive;
     box-sizing: border-box;
@@ -42,7 +40,7 @@ body {
 
 
 
-/* --------------------------------------------------cabecalho--------------------------------------------- */
+/* --------------------------------------------------cabeçalho--------------------------------------------- */
 
 .cabecalho {
     display: flex;
@@ -82,11 +80,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-
 }
-
-
-
 
 .titulo-cabecalho {
     font-size: 32px;
@@ -96,7 +90,6 @@ body {
     position: relative;
     width: 172.58px;
 }
-
 
 .titulo-cabecalho::before {
     content: attr(data-text);
@@ -108,37 +101,6 @@ body {
     animation: color-transition 3s linear 1;
     filter: drop-shadow(0 0 20px darkblue) drop-shadow(0 0 50px darkblue);
     cursor: pointer;
-}
-
-@keyframes color-transition {
-    0% {
-        width: 0;
-        border-right: 2px darkred solid;
-    }
-
-    99% {
-        border-right: 2px darkred solid;
-    }
-
-    100% {
-        width: 100%;
-        border-right: none;
-    }
-}
-
-
-
-
-.lista-fotos-cabecalho {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    opacity: 0.3;
-}
-
-.imagem-cabecalho {
-    width: 100%;
-    height: 300px;
 }
 
 .paragrafo-cabecalho {
@@ -167,16 +129,6 @@ body {
     animation: opacityTecla 2s infinite;
 }
 
-@keyframes opacityTecla {
-    0%, 100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-}
-
 .muzan-img {
     position: absolute;
     bottom: 0;
@@ -195,7 +147,6 @@ body {
     cursor: pointer;
     z-index: 10;
     text-shadow: 1px 1px black;
-
 }
 
 .prosseguir::after {
@@ -213,18 +164,10 @@ body {
 }
 
 .hide-cabecalho {
-    animation: kj 1s linear 1;
     display: none;
 }
-@keyframes kj {
-    0% {
-        display: block;
-    }
-}
-
 
 /* ------------------------------------------------------------------------ Main ----------------------------------------------------------------------------------------------- */
-
 
 .container__principal {
     height: 100vh;
@@ -246,7 +189,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100vh;
-    
 }
 
 .imagem-padrao {
@@ -283,7 +225,6 @@ body {
     position: relative;
 }
 
-
 .container__side-secundario {
     display: flex;
     align-items: center;
@@ -293,14 +234,8 @@ body {
 }
 
 
+/* ---------akaza---------- */
 
-
-
-
-
-
-
-/* -----akaza----- */
 
 .container__akaza{
     background-image:
@@ -324,13 +259,11 @@ body {
     background-position: center;
 }
 
-
 .titulo-akaza {
     color: rgb(255, 0, 43);
     text-shadow: 1.5px 1.5px rgb(0, 206, 206);
     text-decoration: underline;
 }
-
 
 .paragrafo-akaza {
     font-weight: 600;
@@ -339,11 +272,6 @@ body {
     line-height: 1.3em;
     background-image: linear-gradient(to right,transparent, rgba(0, 0, 0, 0.342) 5%, rgba(0, 0, 0, 0.332) 95%, transparent);
 }
-
-
-
-
-
 
 .click-akaza {
     display: flex;
@@ -360,8 +288,6 @@ body {
     animation: opacityMain .5s ease-in 1;
 }
 
-
-
 .click-akaza > .imagem-primaria-akaza {
     display: none;
 }
@@ -377,29 +303,18 @@ body {
     cursor: pointer;
 }
 
-
 .side__secundario-akaza{
     display: flex;
     background-image:
         linear-gradient(to right,transparent, rgba(0, 0, 0, 0.17) 5%, rgba(0, 0, 0, 0.153) 95%, transparent),
-        url(../img/akaza/Akaza\ Power\ Poster\ by\ Marsdk\ Art.png);
-        
+        url(../img/akaza/Akaza\ Power\ Poster\ by\ Marsdk\ Art.png);  
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 
-
-
-
-
-
-
-
-
-
-/* -----Douma----- */
+/* ------------Douma------------ */
 
 
 .side__primal-douma {
@@ -412,7 +327,6 @@ body {
         linear-gradient(to top, rgb(0,0,42,0.7), rgb(0,0,22,0.6),  black);
     background-size: 4500% 4500%;
     animation: gradient 8s ease-in-out infinite;
-    
 }
 
 
@@ -427,21 +341,18 @@ body {
 }
 
 .side__primal-douma::before {
-
-    
-    background-image: url(../img/douma/fundo/—Pngtree—winter\ white\ christmas\ snowflakes\ falling_8533062.png);
-
+    background-image: 
+        url(../img/douma/fundo/—Pngtree—winter\ white\ christmas\ snowflakes\ falling_8533062.png);
     background-position: top;
     background-size: 170% 170%;
     background-repeat: no-repeat;
-    opacity: 0.25;
 
+    opacity: 0.25;
     filter: blur(5px);
     animation: neve 16s linear infinite;
 }
 
 .side__primal-douma::after {
-    
     background-image:
         url(../img/douma/fundo/kkkkkk-cut.png); 
     background-position: initial;
@@ -451,7 +362,6 @@ body {
     filter: blur(2px);
     opacity: 1;
     animation: neve 12s linear infinite;
-    
 }
 
 .titulo-douma {
@@ -468,6 +378,26 @@ body {
     linear-gradient(to right,transparent, rgba(0, 0, 101, 0.12) 5%, rgba(0, 0, 101, 0.12) 95%, transparent);
     text-shadow: 0.3px 0.3px darkblue;
     box-shadow: 0.2px 0.2px 15px rgb(0, 0, 0, 0.1);
+}
+
+.arco-iris {
+    background-image: linear-gradient(to right, red, orange, green, blue, indigo, #91489d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: none ;
+    position: relative;
+    z-index: 1;
+}
+
+.arco-iris::before {
+    content: "";
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: rgb(0,0,0,0.08);
 }
 
 .flores-azuis {
@@ -496,9 +426,6 @@ body {
     z-index: 10;
 }
 
-
-
-
 .side-secundario-douma {
     background-image: 
         url(../img/douma/fundo/gelido.jpg);
@@ -511,25 +438,9 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* ----------Kokushibou---------- */
 
-
-
-
-
-.dd1 {
+.newContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     height: 100vh;
@@ -543,43 +454,20 @@ body {
     top: 50%;
     transform: translateY(-65%);
     opacity: 1;
-    
 }
 
 .textBox-kokushibou {
-    animation: colorr 1.2s linear 1;
+    animation: textOpacity 1.2s linear 1;
+}
+
+.img__kokushibou {
+    cursor: pointer;
 }
 
 .kokushibouimg {
     position: relative;
-    z-index: 100;
+    z-index: 10;
     cursor: pointer;
-}
-
-@keyframes colorr {
-    0%{
-        opacity: 0;
-    }
-    85% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes opacity {
-    0%{
-        opacity: 0.45;
-    }
-
-    50%{
-        opacity: 0.95;
-    }
-
-    100% {
-        opacity: 0.45;
-    }
 }
 
 .paragrafo_kokushibou{
@@ -612,7 +500,6 @@ body {
     animation: nevoa 25s linear infinite;
 }
 
-
 .first-side {
     display: flex;
     flex-direction: column;
@@ -634,31 +521,29 @@ body {
     background-image:
         url(../img/kokushibou/luas/lua_sangrenta-cut-inverse.png);
     background-repeat: no-repeat;
-
-
-        /* primal moon: */
     background-position: 50% 28%; 
     background-size: 45%;
-
-   
-
 }
 
-.dd1 > .first-side::before {
+.newContainer > .first-side::before {
     background-position: 50% 15%;
     background-size: 46%;
 }
 
+.img__kokushibou-oni {
+    width: 50%;
+    display: inline;
+    position: absolute;
+    bottom: 1em;
+    z-index: 10;
+}
 
-
- /* ---container-central--- */
-
+ /*--container-central--*/
 
 .conteudo-mid{
     display: none;
     transition: all 2s;
 }
-
 
 .mid {
     display: flex;
@@ -669,12 +554,10 @@ body {
     position: relative;
     z-index: 100;
     background-color: black;
-
     box-shadow:
         -5px 0 15px red,
         5px 0 15px darkblue;
 }
-
 
 .mid::before,
 .mid::after {
@@ -693,19 +576,13 @@ body {
 .mid::after {
     inset: 10px;
     background-color: black;
-    
     background-image: 
-        
         linear-gradient(to right, #55000094, transparent 6%),
         linear-gradient(to top, #55000094, transparent 6%),
         linear-gradient(to bottom, #55000094, transparent 6%),
         linear-gradient(to left, #55000094, transparent 6%),
         url(../img/kokushibou/bg.jpg);
-    
 }
-
-
-
 
 .caixa-paragrafo {
     padding: 0.1em;
@@ -719,7 +596,6 @@ body {
 
 .miniTexto-kokushibou {
     font-size: 10px;
-    text-align: initial;
     color: rgba(255, 166, 0, 0.715);
 }
 
@@ -742,11 +618,10 @@ body {
     height: 42%;
     z-index: 1;
     opacity: 0.45;
-    animation: opacity 4s linear infinite;
-    
+    animation: opacityEye 4s linear infinite;
 }
 
-                    /* ---container-direito---- */
+/*--container-direito--*/
 
 .second-side {
     display: flex;
@@ -769,28 +644,13 @@ body {
     background-image:
         url(../img/kokushibou/luas/lua-cut.png);
     background-repeat: no-repeat;
-    
     background-position: 50% 30%;
     background-size: 45%; 
 }
 
-.dd1 > .second-side::before {
+.newContainer > .second-side::before {
     background-position: 50% 16%;
     background-size: 46%;
-}
-
-
-
-
-
-
-
-.img__kokushibou-oni {
-    width: 50%;
-    display: inline;
-    position: absolute;
-    bottom: 1em;
-    z-index: 10;
 }
 
 .img__kokushibou-human {
@@ -801,7 +661,7 @@ body {
     z-index: 10;
 }
 
-.chao  {
+.chao {
     position: absolute;
     bottom: 0;
     display: inline;
@@ -811,6 +671,8 @@ body {
     cursor: pointer;
     opacity: 1; 
 }
+
+/* --animações-- */
 
 @keyframes ann {
     0% {
@@ -874,26 +736,50 @@ body {
     }
 }
 
-.arco-iris {
-    background-image: linear-gradient(to right, red, orange, green, blue, indigo, #91489d);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: none ;
-    position: relative;
-    z-index: 1;
+@keyframes color-transition {
+    0% {
+        width: 0;
+        border-right: 2px darkred solid;
+    }
+
+    99% {
+        border-right: 2px darkred solid;
+    }
+
+    100% {
+        width: 100%;
+        border-right: none;
+    }
 }
 
-.arco-iris::before {
-    content: "";
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-    background-color: rgb(0,0,0,0.08);
+@keyframes opacityTecla {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
+@keyframes textOpacity {
+    0%, 85%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacityEye {
+    0%, 100%{
+        opacity: 0.45;
+    }
+
+    50%{
+        opacity: 0.95;
+    }
+}
 
 .anime {
     opacity: 0;
